@@ -35,3 +35,12 @@ class Announcement(BaseModel):
     title: str
     content: str
     publish_date: date
+
+class Student(Base):
+    __tablename__ = "students"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, index=True)
+    age = Column(Integer)
+    grade = Column(String)
+    category=Column(Enum('数据科学','Java','全栈','CPU',name='students_category'))
